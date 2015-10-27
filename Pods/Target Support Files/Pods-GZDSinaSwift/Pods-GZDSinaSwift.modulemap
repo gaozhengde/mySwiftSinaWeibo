@@ -1,0 +1,6 @@
+framework module Pods_GZDSinaSwift {
+  umbrella header "Pods-GZDSinaSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
