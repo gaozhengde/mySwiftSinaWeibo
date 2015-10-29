@@ -19,6 +19,7 @@
 		3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACACA811BE0E63000686FC5 /* GZDOAuthViewController.swift */; };
 		3ACF15B91BDE3CE500FEDBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */; };
 		3ACF15C01BDE3CE500FEDBB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACF15BF1BDE3CE500FEDBB7 /* Assets.xcassets */; };
+		3AF79C7E1BE286E5008B54E0 /* GZDUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */; };
 		8516E2F631FC966C23E295B7 /* Pods_GZDSinaSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D6EC0A35DB50806C22076F /* Pods_GZDSinaSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ACF15BF1BDE3CE500FEDBB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3ACF15C41BDE3CE500FEDBB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDUserAccount.swift; sourceTree = "<group>"; };
 		4883C52F329BC47604070C6B /* Pods-GZDSinaSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GZDSinaSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-GZDSinaSwift/Pods-GZDSinaSwift.release.xcconfig"; sourceTree = "<group>"; };
 		A0D6EC0A35DB50806C22076F /* Pods_GZDSinaSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GZDSinaSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -264,6 +266,7 @@
 		3A0B91811BDE58F80021B840 /* Model(全局模型) */ = {
 			isa = PBXGroup;
 			children = (
+				3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */,
 			);
 			name = "Model(全局模型)";
 			path = Model;
@@ -468,6 +471,7 @@
 				3A0B91771BDE587B0021B840 /* GZDTabBarController.swift in Sources */,
 				3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */,
 				3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */,
+				3AF79C7E1BE286E5008B54E0 /* GZDUserAccount.swift in Sources */,
 				3ACF15B91BDE3CE500FEDBB7 /* AppDelegate.swift in Sources */,
 				3A0B91791BDE587B0021B840 /* GZDMessageTableViewController.swift in Sources */,
 				3A0B917A1BDE587B0021B840 /* GZDProfileTableViewController.swift in Sources */,

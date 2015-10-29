@@ -125,8 +125,20 @@ extension GZDOAuthViewController: UIWebViewDelegate{
                 self.cancelBtnClick()
              })
                 
+                
             }else{
                 SVProgressHUD.showSuccessWithStatus("加载成功.")
+                
+                
+                let account = GZDUserAccount.init(dict: result!)
+                
+                
+                //拿到account 就保存到归档路径文件
+                
+                account.saveAccount()
+                
+                print("\(account)")
+                
             }
             
         }
