@@ -108,18 +108,62 @@ class GZDVisitorView: UIView {
         
         addConstraint(NSLayoutConstraint.init(item: loginButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: registerButton, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
         
-        //遮罩
-    
-        addConstraint(NSLayoutConstraint.init(item: coverImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0))
+        // 遮盖
+        // 左边
+        addConstraint(NSLayoutConstraint(item: coverImageView, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0))
         
-        addConstraint(NSLayoutConstraint.init(item: coverImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+        // 上边
+        addConstraint(NSLayoutConstraint(item: coverImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
         
-        addConstraint(NSLayoutConstraint.init(item: coverImageView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: registerButton, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+        // 右边
+        addConstraint(NSLayoutConstraint(item: coverImageView, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0))
         
+        // 下边
+        addConstraint(NSLayoutConstraint(item: coverImageView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: registerButton, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
         
         
         
     }
+    
+    func pauseAnimation() {
+        //记录暂停时间
+        
+        let pauseTime = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil)
+        //设置动画速度为0
+    
+        iconView.layer.speed = 0
+        
+        //设置动画偏移时间
+        
+        iconView.layer.timeOffset = pauseTime
+        
+    }
+    
+    func resumeAnimation() {
+        
+        //获取暂停时间
+        
+        let pauseTime = iconView.layer.timeOffset
+        
+        //设置动画速度为1
+        
+        iconView.layer.speed = 1
+        
+        iconView.layer.timeOffset = 0
+        
+        iconView.layer.beginTime = 0
+        
+        let timeSincePause = iconView.layer.convertTime(CACurrentMediaTime(), fromLayer: nil) - pauseTime
+        
+        iconView.layer.beginTime = timeSincePause
+    }
+
+    
+    
+    
+    
+    
+    
     
     func setUpSelf(image: String ,message : String){
         
@@ -155,16 +199,22 @@ class GZDVisitorView: UIView {
     func registerButtonClick(){
         
 //        print(__FUNCTION__)
-        if (delegate?.respondsToSelector("visitorViewWillRegister") != nil){
-            delegate?.performSelector("visitorViewWillRegister")
-        }
+//        if (delegate?.respondsToSelector("visitorViewWillRegister") != nil){
+//            delegate?.performSelector("visitorViewWillRegister")
+//        }
+        
+        delegate?.visitorViewWillRegister()
+        
     }
     
     func loginButtonClick(){
     
-        if (delegate?.respondsToSelector("visitorViewWillLogin") != nil) {
-           delegate?.performSelector("visitorViewWillLogin")
-        }
+        //不用去判断 代理是不是对这个协议的方法有响应
+//        if (delegate?.respondsToSelector("visitorViewWillLogin") != nil) {
+//           delegate?.performSelector("visitorViewWillLogin")
+//        }
+        
+        delegate?.visitorViewWillLogin()
         
     }
 //

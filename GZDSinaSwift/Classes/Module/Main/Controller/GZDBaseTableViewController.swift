@@ -11,19 +11,26 @@ import UIKit
 
 extension GZDBaseTableViewController: GZDVisitorViewDelegate {
     
-    
+    ///登录View即将登录
     func visitorViewWillLogin() {
         
-        print("GZDBaseTableViewController ", __FUNCTION__)
+        let oauthController = GZDOAuthViewController()
+        
+        //包装1个导航控制器 坐上角是取消
+        
+        let oauthNav = UINavigationController(rootViewController: oauthController)
+        
+        presentViewController(oauthNav, animated: true) { () -> Void in
+            
+        }
     }
-    
+    ///登录View 即将注册
     func visitorViewWillRegister() {
-     
-        print("GZDBaseTableViewController",__FUNCTION__)
+
+        visitorViewWillLogin()
     }
     
 }
-
 
 
 class GZDBaseTableViewController: UITableViewController {
@@ -38,6 +45,7 @@ class GZDBaseTableViewController: UITableViewController {
         
     }
     
+    ///设置替换的 visitorView
     func setupVisitorView(){
         
         view = visitorView
@@ -46,6 +54,12 @@ class GZDBaseTableViewController: UITableViewController {
         
         if self is GZDHomeTableViewController {
             visitorView.startRotationAnimation()
+            
+            NSNotificationCenter.defaultCenter() .addObserver(self, selector: "didEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "didBecomeActive", name: UIApplicationDidBecomeActiveNotification, object: nil)
+            
+            
         }else if self is GZDMessageTableViewController{
             visitorView.setUpSelf("visitordiscover_image_message", message: "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知")
         }else if self is GZDProfileTableViewController{
@@ -62,6 +76,20 @@ class GZDBaseTableViewController: UITableViewController {
         
         
 }
+    //MARK: - 通知方法
+    
+    func didEnterBackground(){
+        //暂停动画
+        (view as! GZDVisitorView).pauseAnimation()
+    }
+    
+    func didBecomeActive() {
+        //继续动画
+        
+         (view as! GZDVisitorView).resumeAnimation()
+        
+    }
+    
     
     
     func leftBarButtonClick() {

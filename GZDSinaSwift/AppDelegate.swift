@@ -24,11 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let tabBarController = GZDTabBarController()
-    
-    
-        window?.rootViewController = tabBarController
-        
 
+        
+        window?.rootViewController = tabBarController
+    
         window?.makeKeyAndVisible()
         
         self.setupAppearance()
