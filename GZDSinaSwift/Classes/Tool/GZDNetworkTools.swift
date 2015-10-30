@@ -78,4 +78,45 @@ class GZDNetworkTools:AFHTTPSessionManager  {
         }
         
     }
+    
+    
+    
+        //MARK: - 发送网络请求获取用户信息
+   func loadUserInfo(finished : (result :[String:AnyObject]?,error :NSError?) -> (Void)) -> (Void){
+    
+    
+        if GZDUserAccount.loadAccount()?.access_token == nil || GZDUserAccount.loadAccount()?.uid == nil {
+            
+            return
+        }
+    
+        let parameters = [
+    
+            "access_token" :GZDUserAccount.loadAccount()!.access_token!,
+            "uid": GZDUserAccount.loadAccount()!.uid!
+        ]
+        
+ let urlString = "https://api.weibo.com/2/users/show.json"
+        
+  GZDNetworkTools.sharedInstance.GET(urlString, parameters: parameters, success: { (_, result) -> Void in
+
+//            print("result = \(result)")
+    
+            finished(result: result as? [String :AnyObject], error: nil)
+            
+            }) { (_, error: NSError) -> Void in
+//                 print("error = \(error)")
+                finished(result: nil, error: error)
+                
+        }
+        
+        
+        
+    }
+    
+   
+    
+    
+    
+    
 }

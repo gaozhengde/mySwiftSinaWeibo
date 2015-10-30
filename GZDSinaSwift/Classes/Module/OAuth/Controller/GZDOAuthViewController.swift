@@ -118,30 +118,48 @@ extension GZDOAuthViewController: UIWebViewDelegate{
         
         GZDNetworkTools.sharedInstance.loadRequest(code) { (result, error) -> (Void) in
             if error != nil || result == nil{
-                SVProgressHUD.showErrorWithStatus("加载网络请求失败", maskType: SVProgressHUDMaskType.Black)
-                //还要延迟关闭控制器
-
-             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
-                self.cancelBtnClick()
-             })
-                
-                
+//                SVProgressHUD.showErrorWithStatus("加载网络请求失败", maskType: SVProgressHUDMaskType.Black)
+//                //还要延迟关闭控制器
+//
+//             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+//                self.cancelBtnClick()
+//             })
+//
+                self.netError("加载网络失败...")
             }else{
-                SVProgressHUD.showSuccessWithStatus("加载成功.")
+//                SVProgressHUD.showSuccessWithStatus("加载成功.")
+                    print("result: \(result)")
                 
-                
-                let account = GZDUserAccount.init(dict: result!)
-                
+                let account = GZDUserAccount(dict: result!)
                 
                 //拿到account 就保存到归档路径文件
-                
                 account.saveAccount()
                 
-                print("\(account)")
-                
+                account.loadUserInfo({ (error) -> (Void) in
+                    
+                    if error != nil{
+                        self.netError("加载用户信息失败..")
+                    }else{
+                        
+                        print("waimian\(account)")
+                        
+                        ///关闭控制器
+                        self.cancelBtnClick()
+                    }
+                    
+                })
             }
-            
+           
         }
+    }
+    
+    private func netError(errorMessage : String){
+        
+        SVProgressHUD.showErrorWithStatus(errorMessage, maskType: SVProgressHUDMaskType.Black)
+        //还要延迟关闭控制器
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), { () -> Void in
+            self.cancelBtnClick() })
     }
     
     
