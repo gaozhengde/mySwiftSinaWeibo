@@ -8,21 +8,35 @@
 
 import AFNetworking
 
-class GZDNetworkTools:AFHTTPSessionManager  {
+class GZDNetworkTools:NSObject  {
     
 //单例
-    static let sharedInstance: GZDNetworkTools = {
+//    static let sharedInstance: GZDNetworkTools = {
+//        
+//        let baseUrl = NSURL(string: "https://api.weibo.com/")!
+//        
+//        let tools = GZDNetworkTools(baseURL: baseUrl)
+//        
+//        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
+//        
+//        return tools
+//        
+//    }()
+    
+    //单例新
+    
+    static let sharedInstance : GZDNetworkTools = GZDNetworkTools()
+    
+    override init() {
         
-        let baseUrl = NSURL(string: "https://api.weibo.com/")!
+        manager = AFHTTPSessionManager(baseURL: NSURL(string: "https://api.weibo.com/"))
+        manager.responseSerializer.acceptableContentTypes?.insert("text/plain")
         
-        let tools = GZDNetworkTools(baseURL: baseUrl)
-        
-        tools.responseSerializer.acceptableContentTypes?.insert("text/plain")
-        
-        return tools
-        
-    }()
-    //MARK: - OAtuh授权 
+    }
+    
+    private let manager : AFHTTPSessionManager
+    
+    //MARK: - OAtuh授权
     /*
     
     App Key：1066022621
@@ -49,7 +63,7 @@ class GZDNetworkTools:AFHTTPSessionManager  {
 //    "oauth2/access_token"
     //使用工具类来发送网络请求  使用闭包回调
     
-    func loadRequest(code: String,finished: (result: [String:AnyObject]?,error : NSError?) -> (Void)) {
+    func loadRequest(code: String,finished: netWorkCallBack) {
         
         let urlString = "oauth2/access_token"
         
@@ -64,25 +78,31 @@ class GZDNetworkTools:AFHTTPSessionManager  {
         ]
         
         //搞1个闭包回调
-        POST(urlString, parameters: parameters, success: { (_, request) -> Void in
-//            print("\(request)")
-            //执行这个闭包
-            //强转成字典
+        
+        netWorkPost(urlString, parameters: parameters) { (result, error) -> (Void) in
             
-            
-            finished(result: request as? [String:AnyObject], error: nil)
-            
-            }) { (_, error: NSError) -> Void in
-//                print("\(error)")
-                finished(result: nil, error: error)
+            finished(result: result, error: error)
         }
         
+//      manager.POST(urlString, parameters: parameters, success: { (_, request) -> Void in
+////            print("\(request)")
+//            //执行这个闭包
+//            //强转成字典
+//            
+//            
+//            finished(result: request as? [String:AnyObject], error: nil)
+//            
+//            }) { (_, error: NSError) -> Void in
+////                print("\(error)")
+//                finished(result: nil, error: error)
+//        }
+//        
     }
     
     
     
         //MARK: - 发送网络请求获取用户信息
-   func loadUserInfo(finished : (result :[String:AnyObject]?,error :NSError?) -> (Void)) -> (Void){
+   func loadUserInfo(finished : netWorkCallBack) -> (Void){
     
     
         if GZDUserAccount.loadAccount()?.access_token == nil || GZDUserAccount.loadAccount()?.uid == nil {
@@ -97,26 +117,49 @@ class GZDNetworkTools:AFHTTPSessionManager  {
         ]
         
  let urlString = "https://api.weibo.com/2/users/show.json"
-        
-  GZDNetworkTools.sharedInstance.GET(urlString, parameters: parameters, success: { (_, result) -> Void in
-
-//            print("result = \(result)")
     
-            finished(result: result as? [String :AnyObject], error: nil)
-            
-            }) { (_, error: NSError) -> Void in
-//                 print("error = \(error)")
-                finished(result: nil, error: error)
-                
-        }
+    netWorkGet(urlString, parameters: parameters) { (result, error) -> (Void) in
         
-        
-        
+        finished(result: result, error: error)
     }
     
-   
     
-    
-    
-    
+//    manager.GET(urlString, parameters: parameters, success: { (_, result) -> Void in
+//
+////            print("result = \(result)")
+//    
+//            finished(result: result as? [String :AnyObject], error: nil)
+//            
+//            }) { (_, error: NSError) -> Void in
+////                 print("error = \(error)")
+//                finished(result: nil, error: error)
+//        }
+    }
+    typealias netWorkCallBack = (result :[String:AnyObject]?,error :NSError?) -> (Void)
+    ///封装定义的网络工具类发送GET网络请求方法
+    func netWorkGet (URLString: String, parameters: AnyObject?, finished : netWorkCallBack){
+        
+        
+    manager.GET(URLString, parameters: parameters, success: { (_, result) -> Void in
+        
+                finished(result: result as? [String : AnyObject], error: nil)
+        
+        }) { (_, error) -> Void in
+            
+            finished(result: nil, error: error)
+        }
+    }
+      ///封装定义的网络工具类发送POST网络请求方法
+    func netWorkPost (URLString: String, parameters: AnyObject?,finished : netWorkCallBack) -> (Void) {
+        
+      manager.POST(URLString, parameters:parameters, success: { (_, result) -> Void in
+        
+        finished(result: result as? [String : AnyObject], error: nil)
+        
+        }) { (_, error) -> Void in
+            
+            finished(result: nil, error: error)
+        }
+        
+    }
 }
