@@ -25,14 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        let tabBarController = GZDTabBarController()
+//        let tabBarController = GZDTabBarController()
 
         
 //        window?.rootViewController = tabBarController
         
-        let welcomeController = GZDWelcomeViewController()
+//        let welcomeController = GZDWelcomeViewController()
         
-        window?.rootViewController = welcomeController
+        let newFeatureController = GZDNewFeatureViewController()
+        
+        window?.rootViewController = newFeatureController
         
         window?.makeKeyAndVisible()
         
