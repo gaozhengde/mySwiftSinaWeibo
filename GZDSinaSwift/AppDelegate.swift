@@ -28,8 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = GZDTabBarController()
 
         
-        window?.rootViewController = tabBarController
-    
+//        window?.rootViewController = tabBarController
+        
+        let welcomeController = GZDWelcomeViewController()
+        
+        window?.rootViewController = welcomeController
+        
         window?.makeKeyAndVisible()
         
         self.setupAppearance()
@@ -41,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
 
         UITabBar.appearance().tintColor = UIColor.orangeColor()
-        
+
     }
     
     

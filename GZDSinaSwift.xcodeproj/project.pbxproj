@@ -16,6 +16,7 @@
 		3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */; };
 		3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */; };
 		3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */; };
+		3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */; };
 		3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACACA811BE0E63000686FC5 /* GZDOAuthViewController.swift */; };
 		3ACF15B91BDE3CE500FEDBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */; };
 		3ACF15C01BDE3CE500FEDBB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACF15BF1BDE3CE500FEDBB7 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDBaseTableViewController.swift; sourceTree = "<group>"; };
 		3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDVisitorView.swift; sourceTree = "<group>"; };
 		3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNetworkTools.swift; sourceTree = "<group>"; };
+		3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDWelcomeViewController.swift; sourceTree = "<group>"; };
 		3ACACA811BE0E63000686FC5 /* GZDOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDOAuthViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		3ACF15B51BDE3CE500FEDBB7 /* GZDSinaSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZDSinaSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		3A0B91611BDE58370021B840 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				3AAE203B1BE38E330075C933 /* NewFeature */,
 				3ACACA7F1BE0E5C500686FC5 /* OAuth */,
 				3A0B91881BDE6A670021B840 /* Test */,
 				3A0B917B1BDE58D70021B840 /* Discover */,
@@ -277,6 +280,14 @@
 			children = (
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		3AAE203B1BE38E330075C933 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		3ACACA7F1BE0E5C500686FC5 /* OAuth */ = {
@@ -464,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */,
+				3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */,
 				3A0B91761BDE587B0021B840 /* GZDHomeTableViewController.swift in Sources */,
 				3A0B91801BDE58D70021B840 /* GZDDiscoverTableViewController.swift in Sources */,
 				3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */,
