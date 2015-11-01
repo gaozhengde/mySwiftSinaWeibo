@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GZDWelcomeViewController: UIViewController {
     
@@ -18,6 +19,14 @@ class GZDWelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
+        
+        //加载用户头像
+        
+        if let urlString = GZDUserAccount.loadAccount()?.avatar_large{
+            
+            iconView.sd_setImageWithURL(NSURL(string: urlString), placeholderImage: UIImage(named: "avatar_default_big"))
+        }
+        
     }
     
     
@@ -43,7 +52,7 @@ class GZDWelcomeViewController: UIViewController {
                     
                     }, completion: { (_) -> Void in
                         //文字动画完成回调
-                        
+                        (UIApplication.sharedApplication().delegate as! AppDelegate).switchController(true)
                 })
                 
         }
@@ -94,26 +103,48 @@ class GZDWelcomeViewController: UIViewController {
         //backgroundView的约束
         //使用VFL 添加约束 H  V
         //水平方向
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" : backgroundView]))
+//        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" : backgroundView]))
+//        
+//        //垂直方向
+//        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" : backgroundView]))
         
-        //垂直方向
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" : backgroundView]))
+        //使用第三方框架修改约束
+        
+        backgroundView.ff_Fill(view)
+        
         
         //头像的约束
         //底部距离父控件底部-160
         
-        iconViewVConstraint = NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160)
+//        iconViewVConstraint = NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160)
+//        
+//        view.addConstraint(iconViewVConstraint!)
+//        
+//        //水平居中
+//        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+//        
+//        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 85))
+//        
+//          view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 85))
         
-        view.addConstraint(iconViewVConstraint!)
+     let iconViewConstrains = iconView.ff_AlignInner(type: ff_AlignType.BottomCenter, referView: view, size: CGSize(width: 85, height: 85), offset: CGPoint(x: 0, y: -160))
         
-        //水平居中
-        view.addConstraint(NSLayoutConstraint(item: iconView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+
+        //要拿到底部相对于父控件的约束
+        
+      iconViewVConstraint = iconView.ff_Constraint(iconViewConstrains, attribute: NSLayoutAttribute.Bottom)
+        
         
         //欢迎文字的约束
         
-        view.addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+//        view.addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+//        
+//        view.addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 20))
         
-        view.addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: iconView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 20))
+        welcomeLabel.ff_AlignVertical(type: ff_AlignType.BottomCenter, referView: iconView, size: nil, offset: CGPoint(x: 0, y: 20))
+        
+        
+        
     }
     
     

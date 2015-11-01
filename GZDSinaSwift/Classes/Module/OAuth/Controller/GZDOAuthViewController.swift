@@ -145,6 +145,9 @@ extension GZDOAuthViewController: UIWebViewDelegate{
                         
                         ///关闭控制器
                         self.cancelBtnClick()
+                        //加载用户数据成功 关闭控制器 切换控制器
+                        
+                        (UIApplication.sharedApplication().delegate as! AppDelegate).switchController(false)
                     }
                     
                 })

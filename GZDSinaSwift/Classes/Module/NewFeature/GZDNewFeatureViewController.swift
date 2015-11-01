@@ -119,15 +119,18 @@ class GZDCollectionViewCell :UICollectionViewCell {
         backView.translatesAutoresizingMaskIntoConstraints = false
         
         startButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        backView.ff_Fill(contentView)
+        
+        startButton.ff_AlignVertical(type: ff_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -160))
 //    backView.frame = contentView.bounds
-        contentView.addConstraints( NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" :backView]))
-        contentView.addConstraints( NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" :backView]))
-        
-            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
-        
-            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+//        contentView.addConstraints( NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" :backView]))
+//        contentView.addConstraints( NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[bkg]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bkg" :backView]))
+//        
+//            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: -160))
+//        
+//            contentView.addConstraint(NSLayoutConstraint(item: startButton, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: contentView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
 
-        
     }
     
     //动画效果的 方法
@@ -158,10 +161,13 @@ class GZDCollectionViewCell :UICollectionViewCell {
         
         button.setTitle("开始微博", forState: UIControlState.Normal)
 
+        button.addTarget(self, action: "startBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         return button
     }()
     
-    
+    func startBtnClick() {
+        (UIApplication.sharedApplication().delegate as! AppDelegate).switchController(true)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -15,6 +15,11 @@
 		3A0B91801BDE58D70021B840 /* GZDDiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B917D1BDE58D70021B840 /* GZDDiscoverTableViewController.swift */; };
 		3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */; };
 		3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */; };
+		3AA378F31BE4DEA100671F97 /* UIBarButtonItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */; };
+		3AA378F51BE4F61A00671F97 /* GZDHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */; };
+		3AA378F71BE50B1800671F97 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */; };
+		3AA378F91BE5360400671F97 /* GZDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F81BE5360400671F97 /* GZDStatus.swift */; };
+		3AA378FB1BE595C900671F97 /* GZDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378FA1BE595C900671F97 /* GZDUser.swift */; };
 		3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */; };
 		3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */; };
 		3AAE203F1BE3A5050075C933 /* GZDNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE203E1BE3A5050075C933 /* GZDNewFeatureViewController.swift */; };
@@ -36,6 +41,11 @@
 		3A0B917D1BDE58D70021B840 /* GZDDiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDDiscoverTableViewController.swift; sourceTree = "<group>"; };
 		3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDBaseTableViewController.swift; sourceTree = "<group>"; };
 		3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDVisitorView.swift; sourceTree = "<group>"; };
+		3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Extension.swift"; sourceTree = "<group>"; };
+		3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDHomeTitleButton.swift; sourceTree = "<group>"; };
+		3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		3AA378F81BE5360400671F97 /* GZDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDStatus.swift; sourceTree = "<group>"; };
+		3AA378FA1BE595C900671F97 /* GZDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDUser.swift; sourceTree = "<group>"; };
 		3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNetworkTools.swift; sourceTree = "<group>"; };
 		3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDWelcomeViewController.swift; sourceTree = "<group>"; };
 		3AAE203E1BE3A5050075C933 /* GZDNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNewFeatureViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3AAE20401BE3A9130075C933 /* UIColor + Extension.swift */,
+				3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */,
 			);
 			name = "Extension(扩展)";
 			path = Extension;
@@ -86,6 +97,7 @@
 		3A0B915F1BDE58170021B840 /* Library(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */,
 			);
 			name = "Library(第三方库)";
 			path = Library;
@@ -144,6 +156,7 @@
 		3A0B91661BDE587B0021B840 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -275,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */,
+				3AA378F81BE5360400671F97 /* GZDStatus.swift */,
+				3AA378FA1BE595C900671F97 /* GZDUser.swift */,
 			);
 			name = "Model(全局模型)";
 			path = Model;
@@ -480,15 +495,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA378FB1BE595C900671F97 /* GZDUser.swift in Sources */,
 				3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */,
+				3AA378F71BE50B1800671F97 /* UIView+AutoLayout.swift in Sources */,
 				3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */,
 				3AAE203F1BE3A5050075C933 /* GZDNewFeatureViewController.swift in Sources */,
+				3AA378F51BE4F61A00671F97 /* GZDHomeTitleButton.swift in Sources */,
 				3A0B91761BDE587B0021B840 /* GZDHomeTableViewController.swift in Sources */,
 				3A0B91801BDE58D70021B840 /* GZDDiscoverTableViewController.swift in Sources */,
 				3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */,
+				3AA378F31BE4DEA100671F97 /* UIBarButtonItem + Extension.swift in Sources */,
 				3A0B91781BDE587B0021B840 /* GZDTabBar.swift in Sources */,
 				3A0B91771BDE587B0021B840 /* GZDTabBarController.swift in Sources */,
 				3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */,
+				3AA378F91BE5360400671F97 /* GZDStatus.swift in Sources */,
 				3AAE20411BE3A9130075C933 /* UIColor + Extension.swift in Sources */,
 				3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */,
 				3AF79C7E1BE286E5008B54E0 /* GZDUserAccount.swift in Sources */,

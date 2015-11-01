@@ -9,6 +9,13 @@
 import UIKit
 
 class GZDUserAccount: NSObject ,NSCoding{
+    
+    
+    class func isUserAccountLogin() -> Bool{
+        
+        return GZDUserAccount.loadAccount() != nil
+    }
+    
     ///用于调用access_token，接口获取授权后的access token。
     var access_token : String?
     ///access_token的生命周期，单位是秒数。
@@ -57,6 +64,8 @@ class GZDUserAccount: NSObject ,NSCoding{
     //解档的方法
     //声明1个属性来把用户的账号信息保存到内存中
    private static var userAccount : GZDUserAccount?
+    
+    //加载用户信息
     class func loadAccount() -> GZDUserAccount? {
         
         if userAccount == nil
@@ -71,7 +80,7 @@ class GZDUserAccount: NSObject ,NSCoding{
             return userAccount
         }
         
-        
+
         return nil
     }
     //    result :[String : AnyObject]?,error: NSError?) -> (Void)
@@ -80,7 +89,12 @@ class GZDUserAccount: NSObject ,NSCoding{
         GZDNetworkTools.sharedInstance.loadUserInfo { (result, error) -> (Void) in
             if result  == nil || error != nil{
             
-                finished(error: error)
+                //domain 领域 出错的范围
+                //code 错误码
+                //错误的描述信息
+                let error = NSError(domain: "www.gzd.com.cn", code: -1, userInfo: ["description" : "加载用户信息失败"])
+                
+                 finished(error: error)
                 
                 return
 

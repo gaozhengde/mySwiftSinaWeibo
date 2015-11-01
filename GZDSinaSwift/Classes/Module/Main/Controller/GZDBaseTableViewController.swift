@@ -35,7 +35,8 @@ extension GZDBaseTableViewController: GZDVisitorViewDelegate {
 
 class GZDBaseTableViewController: UITableViewController {
 
-    let userLogin = false
+    let userLogin = GZDUserAccount.isUserAccountLogin()
+//        let userLogin = false
     
     var visitorView = GZDVisitorView()
     
