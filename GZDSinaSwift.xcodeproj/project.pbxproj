@@ -15,15 +15,34 @@
 		3A0B91801BDE58D70021B840 /* GZDDiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B917D1BDE58D70021B840 /* GZDDiscoverTableViewController.swift */; };
 		3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */; };
 		3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */; };
+		3A402E2C1BEE2F7000F0843C /* GZDPhotoSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A402E2B1BEE2F7000F0843C /* GZDPhotoSelectController.swift */; };
+		3A402E2E1BEE2F7E00F0843C /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A402E2D1BEE2F7E00F0843C /* UIImage + Extension.swift */; };
+		3A8033111BE8DE10002295D4 /* GZDRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8033101BE8DE10002295D4 /* GZDRefreshControl.swift */; };
+		3A8033131BE8DE8F002295D4 /* GZDRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A8033121BE8DE8F002295D4 /* GZDRefreshView.xib */; };
+		3A8E02F41BEA784C00102EAE /* GZDComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8E02F31BEA784C00102EAE /* GZDComposeViewController.swift */; };
+		3A9569541BE64E0B00E15184 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9569531BE64E0B00E15184 /* UILabel + Extension.swift */; };
+		3A9569561BE67D0200E15184 /* GZDBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9569551BE67D0200E15184 /* GZDBottomView.swift */; };
+		3A9569581BE67D2E00E15184 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9569571BE67D2E00E15184 /* UIButton + Extension.swift */; };
+		3A99A4A11BEB70F30089D63B /* GZDPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99A4A01BEB70F30089D63B /* GZDPlaceholderTextView.swift */; };
 		3AA378F31BE4DEA100671F97 /* UIBarButtonItem + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */; };
 		3AA378F51BE4F61A00671F97 /* GZDHomeTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */; };
 		3AA378F71BE50B1800671F97 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */; };
 		3AA378F91BE5360400671F97 /* GZDStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378F81BE5360400671F97 /* GZDStatus.swift */; };
 		3AA378FB1BE595C900671F97 /* GZDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA378FA1BE595C900671F97 /* GZDUser.swift */; };
+		3AA379231BE6280A00671F97 /* GZDHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA379221BE6280A00671F97 /* GZDHomeCell.swift */; };
+		3AA379251BE6282F00671F97 /* GZDTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA379241BE6282F00671F97 /* GZDTopView.swift */; };
 		3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */; };
+		3AA81EEA1BE6EBF600DB6C9C /* UIScreen + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA81EE91BE6EBF600DB6C9C /* UIScreen + Extension.swift */; };
+		3AA81EEC1BE6F06600DB6C9C /* GZDPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA81EEB1BE6F06600DB6C9C /* GZDPictureView.swift */; };
+		3AA81EEE1BE77C5300DB6C9C /* GZDForwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA81EED1BE77C5300DB6C9C /* GZDForwardCell.swift */; };
+		3AA81EF01BE78FD500DB6C9C /* GZDNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA81EEF1BE78FD500DB6C9C /* GZDNormalCell.swift */; };
+		3AA81EF21BE7CA7500DB6C9C /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA81EF11BE7CA7500DB6C9C /* UIImageView + Extension.swift */; };
 		3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */; };
 		3AAE203F1BE3A5050075C933 /* GZDNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE203E1BE3A5050075C933 /* GZDNewFeatureViewController.swift */; };
 		3AAE20411BE3A9130075C933 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAE20401BE3A9130075C933 /* UIColor + Extension.swift */; };
+		3AB78DB41BEB0BC3002B5E82 /* GZDComposeToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB78DB31BEB0BC3002B5E82 /* GZDComposeToolBar.swift */; };
+		3AB78DB61BEB1078002B5E82 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB78DB51BEB1078002B5E82 /* Storyboard.storyboard */; };
+		3AC4CAC01BEED5CA00DA272E /* GZDPhotoBrowseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4CABF1BEED5CA00DA272E /* GZDPhotoBrowseController.swift */; };
 		3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACACA811BE0E63000686FC5 /* GZDOAuthViewController.swift */; };
 		3ACF15B91BDE3CE500FEDBB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */; };
 		3ACF15C01BDE3CE500FEDBB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACF15BF1BDE3CE500FEDBB7 /* Assets.xcassets */; };
@@ -41,15 +60,34 @@
 		3A0B917D1BDE58D70021B840 /* GZDDiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDDiscoverTableViewController.swift; sourceTree = "<group>"; };
 		3A0B91821BDE5D6B0021B840 /* GZDBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDBaseTableViewController.swift; sourceTree = "<group>"; };
 		3A0B91861BDE5EB70021B840 /* GZDVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDVisitorView.swift; sourceTree = "<group>"; };
+		3A402E2B1BEE2F7000F0843C /* GZDPhotoSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDPhotoSelectController.swift; sourceTree = "<group>"; };
+		3A402E2D1BEE2F7E00F0843C /* UIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		3A8033101BE8DE10002295D4 /* GZDRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDRefreshControl.swift; sourceTree = "<group>"; };
+		3A8033121BE8DE8F002295D4 /* GZDRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GZDRefreshView.xib; sourceTree = "<group>"; };
+		3A8E02F31BEA784C00102EAE /* GZDComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDComposeViewController.swift; sourceTree = "<group>"; };
+		3A9569531BE64E0B00E15184 /* UILabel + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		3A9569551BE67D0200E15184 /* GZDBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDBottomView.swift; sourceTree = "<group>"; };
+		3A9569571BE67D2E00E15184 /* UIButton + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		3A99A4A01BEB70F30089D63B /* GZDPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDPlaceholderTextView.swift; sourceTree = "<group>"; };
 		3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem + Extension.swift"; sourceTree = "<group>"; };
 		3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDHomeTitleButton.swift; sourceTree = "<group>"; };
 		3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		3AA378F81BE5360400671F97 /* GZDStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDStatus.swift; sourceTree = "<group>"; };
 		3AA378FA1BE595C900671F97 /* GZDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDUser.swift; sourceTree = "<group>"; };
+		3AA379221BE6280A00671F97 /* GZDHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDHomeCell.swift; sourceTree = "<group>"; };
+		3AA379241BE6282F00671F97 /* GZDTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDTopView.swift; sourceTree = "<group>"; };
 		3AA66F4C1BDF7AAE005659A4 /* GZDNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNetworkTools.swift; sourceTree = "<group>"; };
+		3AA81EE91BE6EBF600DB6C9C /* UIScreen + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen + Extension.swift"; sourceTree = "<group>"; };
+		3AA81EEB1BE6F06600DB6C9C /* GZDPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDPictureView.swift; sourceTree = "<group>"; };
+		3AA81EED1BE77C5300DB6C9C /* GZDForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDForwardCell.swift; sourceTree = "<group>"; };
+		3AA81EEF1BE78FD500DB6C9C /* GZDNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNormalCell.swift; sourceTree = "<group>"; };
+		3AA81EF11BE7CA7500DB6C9C /* UIImageView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		3AAE203C1BE38E480075C933 /* GZDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDWelcomeViewController.swift; sourceTree = "<group>"; };
 		3AAE203E1BE3A5050075C933 /* GZDNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDNewFeatureViewController.swift; sourceTree = "<group>"; };
 		3AAE20401BE3A9130075C933 /* UIColor + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		3AB78DB31BEB0BC3002B5E82 /* GZDComposeToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDComposeToolBar.swift; sourceTree = "<group>"; };
+		3AB78DB51BEB1078002B5E82 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		3AC4CABF1BEED5CA00DA272E /* GZDPhotoBrowseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDPhotoBrowseController.swift; sourceTree = "<group>"; };
 		3ACACA811BE0E63000686FC5 /* GZDOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GZDOAuthViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		3ACF15B51BDE3CE500FEDBB7 /* GZDSinaSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZDSinaSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACF15B81BDE3CE500FEDBB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,8 +125,13 @@
 		3A0B915E1BDE57E10021B840 /* Extension(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				3A402E2D1BEE2F7E00F0843C /* UIImage + Extension.swift */,
 				3AAE20401BE3A9130075C933 /* UIColor + Extension.swift */,
 				3AA378F21BE4DEA100671F97 /* UIBarButtonItem + Extension.swift */,
+				3A9569531BE64E0B00E15184 /* UILabel + Extension.swift */,
+				3A9569571BE67D2E00E15184 /* UIButton + Extension.swift */,
+				3AA81EE91BE6EBF600DB6C9C /* UIScreen + Extension.swift */,
+				3AA81EF11BE7CA7500DB6C9C /* UIImageView + Extension.swift */,
 			);
 			name = "Extension(扩展)";
 			path = Extension;
@@ -97,6 +140,8 @@
 		3A0B915F1BDE58170021B840 /* Library(第三方库) */ = {
 			isa = PBXGroup;
 			children = (
+				3A402E291BEE2F5100F0843C /* PhotoBrowse(照片浏览器) */,
+				3A402E2A1BEE2F5100F0843C /* PhotoSelector(照片选择器) */,
 				3AA378F61BE50B1800671F97 /* UIView+AutoLayout.swift */,
 			);
 			name = "Library(第三方库)";
@@ -115,6 +160,7 @@
 		3A0B91611BDE58370021B840 /* Module(模块) */ = {
 			isa = PBXGroup;
 			children = (
+				3A8E02EF1BEA777700102EAE /* Compose */,
 				3AAE203B1BE38E330075C933 /* NewFeature */,
 				3ACACA7F1BE0E5C500686FC5 /* OAuth */,
 				3A0B91881BDE6A670021B840 /* Test */,
@@ -132,8 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				3A0B91631BDE587B0021B840 /* Controller */,
-				3A0B91651BDE587B0021B840 /* Model */,
-				3A0B91661BDE587B0021B840 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -142,6 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				3A0B91641BDE587B0021B840 /* GZDHomeTableViewController.swift */,
+				3A8033101BE8DE10002295D4 /* GZDRefreshControl.swift */,
+				3A8033121BE8DE8F002295D4 /* GZDRefreshView.xib */,
+				3A0B91651BDE587B0021B840 /* Model */,
+				3A0B91661BDE587B0021B840 /* View */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,15 +198,18 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		3A0B91661BDE587B0021B840 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AA379211BE627DA00671F97 /* Cell */,
 				3AA378F41BE4F61A00671F97 /* GZDHomeTitleButton.swift */,
 			);
-			path = View;
+			name = View;
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		3A0B91671BDE587B0021B840 /* Main */ = {
@@ -287,9 +338,9 @@
 		3A0B91811BDE58F80021B840 /* Model(全局模型) */ = {
 			isa = PBXGroup;
 			children = (
-				3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */,
 				3AA378F81BE5360400671F97 /* GZDStatus.swift */,
 				3AA378FA1BE595C900671F97 /* GZDUser.swift */,
+				3AF79C7D1BE286E5008B54E0 /* GZDUserAccount.swift */,
 			);
 			name = "Model(全局模型)";
 			path = Model;
@@ -298,8 +349,72 @@
 		3A0B91881BDE6A670021B840 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3AB78DB51BEB1078002B5E82 /* Storyboard.storyboard */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		3A402E291BEE2F5100F0843C /* PhotoBrowse(照片浏览器) */ = {
+			isa = PBXGroup;
+			children = (
+				3AC4CABF1BEED5CA00DA272E /* GZDPhotoBrowseController.swift */,
+			);
+			path = "PhotoBrowse(照片浏览器)";
+			sourceTree = "<group>";
+		};
+		3A402E2A1BEE2F5100F0843C /* PhotoSelector(照片选择器) */ = {
+			isa = PBXGroup;
+			children = (
+				3A402E2B1BEE2F7000F0843C /* GZDPhotoSelectController.swift */,
+			);
+			path = "PhotoSelector(照片选择器)";
+			sourceTree = "<group>";
+		};
+		3A8E02EF1BEA777700102EAE /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E02F01BEA777700102EAE /* Controller */,
+				3A8E02F11BEA777700102EAE /* Model */,
+				3A8E02F21BEA777700102EAE /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		3A8E02F01BEA777700102EAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A8E02F31BEA784C00102EAE /* GZDComposeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A8E02F11BEA777700102EAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A8E02F21BEA777700102EAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AB78DB31BEB0BC3002B5E82 /* GZDComposeToolBar.swift */,
+				3A99A4A01BEB70F30089D63B /* GZDPlaceholderTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AA379211BE627DA00671F97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3AA379221BE6280A00671F97 /* GZDHomeCell.swift */,
+				3AA81EED1BE77C5300DB6C9C /* GZDForwardCell.swift */,
+				3AA81EEF1BE78FD500DB6C9C /* GZDNormalCell.swift */,
+				3AA379241BE6282F00671F97 /* GZDTopView.swift */,
+				3A9569551BE67D0200E15184 /* GZDBottomView.swift */,
+				3AA81EEB1BE6F06600DB6C9C /* GZDPictureView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3AAE203B1BE38E330075C933 /* NewFeature */ = {
@@ -437,6 +552,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ACF15C01BDE3CE500FEDBB7 /* Assets.xcassets in Resources */,
+				3A8033131BE8DE8F002295D4 /* GZDRefreshView.xib in Resources */,
+				3AB78DB61BEB1078002B5E82 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,21 +612,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC4CAC01BEED5CA00DA272E /* GZDPhotoBrowseController.swift in Sources */,
+				3A9569581BE67D2E00E15184 /* UIButton + Extension.swift in Sources */,
 				3AA378FB1BE595C900671F97 /* GZDUser.swift in Sources */,
 				3AA66F4D1BDF7AAE005659A4 /* GZDNetworkTools.swift in Sources */,
 				3AA378F71BE50B1800671F97 /* UIView+AutoLayout.swift in Sources */,
+				3A9569561BE67D0200E15184 /* GZDBottomView.swift in Sources */,
+				3A402E2E1BEE2F7E00F0843C /* UIImage + Extension.swift in Sources */,
+				3AA81EEA1BE6EBF600DB6C9C /* UIScreen + Extension.swift in Sources */,
 				3AAE203D1BE38E480075C933 /* GZDWelcomeViewController.swift in Sources */,
 				3AAE203F1BE3A5050075C933 /* GZDNewFeatureViewController.swift in Sources */,
 				3AA378F51BE4F61A00671F97 /* GZDHomeTitleButton.swift in Sources */,
+				3AA81EEE1BE77C5300DB6C9C /* GZDForwardCell.swift in Sources */,
+				3AA379251BE6282F00671F97 /* GZDTopView.swift in Sources */,
 				3A0B91761BDE587B0021B840 /* GZDHomeTableViewController.swift in Sources */,
+				3AA81EF01BE78FD500DB6C9C /* GZDNormalCell.swift in Sources */,
 				3A0B91801BDE58D70021B840 /* GZDDiscoverTableViewController.swift in Sources */,
 				3A0B91871BDE5EB70021B840 /* GZDVisitorView.swift in Sources */,
+				3A9569541BE64E0B00E15184 /* UILabel + Extension.swift in Sources */,
 				3AA378F31BE4DEA100671F97 /* UIBarButtonItem + Extension.swift in Sources */,
+				3AA379231BE6280A00671F97 /* GZDHomeCell.swift in Sources */,
+				3A8033111BE8DE10002295D4 /* GZDRefreshControl.swift in Sources */,
+				3AB78DB41BEB0BC3002B5E82 /* GZDComposeToolBar.swift in Sources */,
+				3A8E02F41BEA784C00102EAE /* GZDComposeViewController.swift in Sources */,
 				3A0B91781BDE587B0021B840 /* GZDTabBar.swift in Sources */,
 				3A0B91771BDE587B0021B840 /* GZDTabBarController.swift in Sources */,
+				3AA81EEC1BE6F06600DB6C9C /* GZDPictureView.swift in Sources */,
+				3A402E2C1BEE2F7000F0843C /* GZDPhotoSelectController.swift in Sources */,
 				3ACACA821BE0E63000686FC5 /* GZDOAuthViewController.swift in Sources */,
+				3A99A4A11BEB70F30089D63B /* GZDPlaceholderTextView.swift in Sources */,
 				3AA378F91BE5360400671F97 /* GZDStatus.swift in Sources */,
 				3AAE20411BE3A9130075C933 /* UIColor + Extension.swift in Sources */,
+				3AA81EF21BE7CA7500DB6C9C /* UIImageView + Extension.swift in Sources */,
 				3A0B91831BDE5D6B0021B840 /* GZDBaseTableViewController.swift in Sources */,
 				3AF79C7E1BE286E5008B54E0 /* GZDUserAccount.swift in Sources */,
 				3ACF15B91BDE3CE500FEDBB7 /* AppDelegate.swift in Sources */,

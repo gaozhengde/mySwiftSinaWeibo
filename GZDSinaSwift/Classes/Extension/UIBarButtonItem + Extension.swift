@@ -21,8 +21,21 @@ extension UIBarButtonItem {
         button.setBackgroundImage(UIImage(named: imageName), forState: UIControlState.Normal)
         
         button.setBackgroundImage(UIImage(named: "\(imageName)_highlighted"), forState: UIControlState.Highlighted)
+        
         button.sizeToFit()
 
+        self.init(customView: button)
+    }
+    
+    convenience init(imageName:String ,target:AnyObject,selector: Selector){
+        
+        let button = UIButton(type: UIButtonType.Custom)
+        button.setBackgroundImage(UIImage(named: imageName), forState: UIControlState.Normal)
+        button.setBackgroundImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
+       
+        button.addTarget(target, action: selector, forControlEvents: UIControlEvents.TouchUpInside)
+        button.sizeToFit()
+        
         self.init(customView: button)
     }
     

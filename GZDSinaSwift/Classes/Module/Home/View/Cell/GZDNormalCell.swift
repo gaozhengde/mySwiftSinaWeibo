@@ -7,15 +7,15 @@
 //
 
 import UIKit
-
+//原创cell
 class GZDNormalCell: GZDHomeCell {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    override func prepareUI() {
+        super.prepareUI()
+              let constraints = pictureView.ff_AlignVertical(type: ff_AlignType.BottomLeft, referView: contentLabel, size: CGSizeZero, offset: CGPoint(x: 0, y: statusCellMargin))
+        
+              pictureViewHeigthConstraint = pictureView.ff_Constraint(constraints, attribute: NSLayoutAttribute.Height)
+                pictureViewWidthConstraint = pictureView.ff_Constraint(constraints, attribute: NSLayoutAttribute.Width)
     }
-    */
 
 }

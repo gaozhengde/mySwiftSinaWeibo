@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+private let reuseIdentifier = "cell"
 class GZDPhotoSelectController: UICollectionViewController,GZDPhotoSelectorCellDelegate{
     
     //MARK: - 属性
@@ -56,8 +56,8 @@ class GZDPhotoSelectController: UICollectionViewController,GZDPhotoSelectorCellD
         //当图片数量小于最大张数的 cell 的数量  = 照片的张数 + 1
         //当图片数量等于最大张数  cell 的数量 = 照片的数量
         
-//        return photos.count < maxPhotoCount ? photos.count + 1 : photos.count
-        return 6
+        return photos.count < maxPhotoCount ? photos.count + 1 : photos.count
+        
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -76,7 +76,7 @@ class GZDPhotoSelectController: UICollectionViewController,GZDPhotoSelectorCellD
             cell.setAddButton()
         }
         
-            return cell
+        return cell
     }
     
     
@@ -89,12 +89,30 @@ class GZDPhotoSelectController: UICollectionViewController,GZDPhotoSelectorCellD
         }
         let picker = UIImagePickerController()
         
+        picker.delegate = self
+        //记录当前点击的cell 的indexPath
+        currentIndexPath = collectionView?.indexPathForCell(cell)
+        
+        
         presentViewController(picker, animated: true) { () -> Void in
             
         }
     }
     //点击删除代理
     func photoSelectorCellRemovePhoto(cell : GZDPhotoSelectorCell){
+        
+        //点击的是哪个cell 的删除按钮
+        
+        let indexPath = collectionView!.indexPathForCell(cell)
+        
+        photos.removeAtIndex(indexPath!.item)
+        
+        if photos.count < 5 {
+            
+            collectionView?.deleteItemsAtIndexPaths([indexPath!])
+        }else {
+            collectionView?.reloadData()
+        }
         
     }
     
@@ -107,9 +125,19 @@ extension GZDPhotoSelectController: UIImagePickerControllerDelegate,UINavigation
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         print("image \(image)")
         //完成回调
-        
+        let newImage = image.scaleImage()
         //将选择的图片添加到数组
-        photos.append(image)
+        //        photos.append(image)
+        
+        print("current\(currentIndexPath?.item)   photos \(photos.count)")
+        
+        if currentIndexPath?.item < photos.count {
+            //点击的是图片,需要替换图片
+            photos[currentIndexPath!.item] = newImage
+        }else {
+            //点击的是加号
+            photos.append(newImage)
+        }
         //刷新数据
         collectionView?.reloadData()
         //关闭系统相册
@@ -145,6 +173,8 @@ class GZDPhotoSelectorCell : UICollectionViewCell {
             
             addButton.setImage(image, forState: UIControlState.Normal)
             addButton.setImage(image, forState: UIControlState.Highlighted)
+            //显示删除按钮
+            removeButton.hidden = false
         }
     }
     
@@ -175,7 +205,7 @@ class GZDPhotoSelectorCell : UICollectionViewCell {
         //  设置约束
         let views = ["ab": addButton,"rb" : removeButton]
         
-//            addButton.frame = contentView.bounds
+        //            addButton.frame = contentView.bounds
         contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[ab]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
         contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[ab]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil,views: views))
         
@@ -222,7 +252,7 @@ class GZDPhotoSelectorCell : UICollectionViewCell {
         
         button.contentMode = UIViewContentMode.ScaleAspectFill
         
-//        button.sizeToFit()
+        //        button.sizeToFit()
         
         return button
         
@@ -231,13 +261,12 @@ class GZDPhotoSelectorCell : UICollectionViewCell {
     private lazy var removeButton :UIButton = {
         
         let button = UIButton()
-//        button.setImage(UIImage(named: "compose_photo_close"), forState: UIControlState.Normal)
         
         button.setBackgroundImage(UIImage(named: "compose_photo_close"), forState: UIControlState.Normal)
-//        button.setImage(UIImage(named: "compose_photo_close"), forState: UIControlState.Highlighted)
+        
         
         button.addTarget(self, action: "removePhoto", forControlEvents: UIControlEvents.TouchUpInside)
-        button.sizeToFit()
+        //        button.sizeToFit()
         
         return button
     }()

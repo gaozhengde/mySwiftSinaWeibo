@@ -205,7 +205,7 @@ class GZDNetworkTools:NSObject  {
     
     
     //发送网络请求获取微博数据
-    func loadStauts(finished : netWorkCallBack){
+    func loadStauts(since_id:Int,max_id: Int,finished : netWorkCallBack){
         
         let urlString = "/2/statuses/home_timeline.json"
         
@@ -223,7 +223,16 @@ class GZDNetworkTools:NSObject  {
 //                "access_token" : access_token,
 //                "count" : 1
 //            ]
-        parameters["count"] = 1
+//        parameters["count"] = 1
+        //也有可能为0   所以要先判断是否为0
+        if since_id > 0 {
+            parameters["since_id"] = since_id
+        } else if max_id > 0{
+            parameters["max_id"] = max_id - 1
+        }
+        
+        
+        
         
             netWorkGet(urlString, parameters: parameters, finished: finished)
 //        }

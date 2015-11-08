@@ -6,4 +6,19 @@
 //  Copyright © 2015年 高正德. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UILabel {
+    
+    
+    convenience init(fontSize : CGFloat , fontColor : UIColor) {
+        self.init()
+    
+        self.font = UIFont.systemFontOfSize(fontSize)
+        self.textColor = fontColor
+        
+    }
+    
+    
+    
+}

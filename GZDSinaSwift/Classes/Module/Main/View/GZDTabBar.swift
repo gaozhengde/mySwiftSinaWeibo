@@ -8,7 +8,20 @@
 
 import UIKit
 
+
+
+@objc protocol GZDTabBarDelegate: NSObjectProtocol{
+
+    //代理方法 为了传递 中间按钮的点击事件
+   
+   optional func tabBarComposeBtnClick ()
+
+    
+}
+
 class GZDTabBar: UITabBar {
+
+    weak var tabBarDelegate : GZDTabBarDelegate?
 
     private let count : CGFloat = 5
     
@@ -43,7 +56,7 @@ class GZDTabBar: UITabBar {
                 view.frame = CGRectOffset(frame,CGFloat(index) * width, 0)
                 
                 
-                
+
                 index += index == 1 ? 2 : 1
             }
             
@@ -67,7 +80,19 @@ class GZDTabBar: UITabBar {
     }()
     
     func composeButtonClick (){
+        //点以后弹出1个控制器
+        //如果有登陆 就弹出 那个控制器  如果没有登录就弹出授权登录的界面
+//        let vc = GZDUserAccount.isUserAccountLogin() ? GZDComposeViewController() : GZDOAuthViewController()
+    
+        
         print("composeButtonClick")
+//        tabbar是不能弹出控制器的 那么只有让tabbarController弹出
+
+        tabBarDelegate?.tabBarComposeBtnClick!()
+        
+        //通知
+        
+//        NSNotificationCenter.defaultCenter().postNotificationName("composeBtnClick", object: self)
     }
     
     

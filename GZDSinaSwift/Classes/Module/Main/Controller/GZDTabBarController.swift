@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GZDTabBarController: UITabBarController {
+class GZDTabBarController: UITabBarController , GZDTabBarDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,25 @@ class GZDTabBarController: UITabBarController {
         
         let tabBar = GZDTabBar()
         
+        //设置代理
+        tabBar.tabBarDelegate = self
+        
         setValue(tabBar, forKey: "tabBar")
         
 //        tabBar.tintColor = UIColor.orangeColor()
-
+        
+//        //接收通知
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "composeBtnClick", name: "composeBtnClick", object: nil)
     }
 
+//    func composeBtnClick() {
+//        print("我收到了通知")
+//    }
+    
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "composeBtnClick", object: nil)
+    }
     
     func addChildViewController(controller: UIViewController ,title: String,let imageName : String) {
         
@@ -61,7 +74,23 @@ class GZDTabBarController: UITabBarController {
         
         addChildViewController(nav)
         
+        
     }
     
+    //代理方法  只为了 modal 出控制器
+    func tabBarComposeBtnClick() {
+        
+        print("我是代理方法")
+        //如果登录了 就切花到 comepose  如果没有登录就切换到 授权控制器
+        let composeNav = UINavigationController(rootViewController: GZDComposeViewController())
+        let oauthNav = UINavigationController(rootViewController: GZDOAuthViewController())
+        let vc = GZDUserAccount.isUserAccountLogin() ? composeNav :oauthNav
+        
+        presentViewController(vc, animated: true) { () -> Void in
+            //完成回调
+        }
+        
+        
+    }
    
 }

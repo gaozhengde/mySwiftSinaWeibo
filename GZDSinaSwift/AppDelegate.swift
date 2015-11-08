@@ -60,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !GZDUserAccount.isUserAccountLogin(){
             
             return GZDTabBarController()
+//            return GZDBaseTableViewController()
         }
         
         return isNewVersion() ? GZDNewFeatureViewController() : GZDWelcomeViewController()
